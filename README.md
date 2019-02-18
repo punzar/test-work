@@ -64,5 +64,5 @@
 
     java -jar resumaker.jar ../properties/person.properties --template ../templates/default_template.cvml 
 
-В той же папке будет создана готовая анкета **valeriy.html.** Приятного пользования.
+В той же папке где лежит проперти файл будет создана готовая анкета **valeriy.html.** Приятного пользования.
 
