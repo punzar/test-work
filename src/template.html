@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <title>#title</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1 class="text-center">Резюме</h1>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center">Java-стажёр</h3>
+          <br />
+        </div>
+      </div>
+      <div class="row well">
+        <div class="col-xs-12 col-sm-3 col-sm-push-9 ">
+          <img
+            style="margin-bottom: 2rem; "
+            class="img-rounded img-responsive left-block"
+            src="{{ avatar }}"
+            alt="avatar"
+          />
+        </div>
+        <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="conditional">
+                <dt>Полное имя</dt>
+                <dd>{{ fullName }}</dd>
+              </div>
+            </li>
+
+            <li class="list-group-item">
+              <div class="conditional">
+                <dt>Дата рождения</dt>
+                <dd>{{ dateOfBirth }}</dd>
+              </div>
+            </li>
+
+            <li class="list-group-item">
+              <div class="conditional">
+                <dt>Phone</dt>
+                <dd>{{ phone }}</dd>
+              </div>
+            </li>
+
+            <li class="list-group-item">
+              <div class="conditional">
+                <dt>Email</dt>
+                <dd>{{ email }}</dd>
+              </div>
+            </li>
+
+            <li class="list-group-item">
+              <div class="conditional">
+                <dt>Skype</dt>
+                <dd>{{ skype }}</dd>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row conditional">
+        <div class="col well">
+          <h3>Цель</h3>
+          <p>{{ goal }}</p>
+        </div>
+      </div>
+
+      <div class="row conditional">
+        <div class="col well">
+          <h3>Опыт</h3>
+          <ul class="list-group">
+            {{
+              jobs
+            }}
+          </ul>
+        </div>
+      </div>
+
+      <div class="row conditional">
+        <div class="col well">
+          <h3>Образование</h3>
+          <ul class="list-group">
+            {{
+              education
+            }}
+          </ul>
+        </div>
+      </div>
+
+      <div class="row conditional">
+        <div class="col well">
+          <h3>Дополнительное образование</h3>
+          <ul class="list-group">
+            {{
+              additionalEducation
+            }}
+          </ul>
+        </div>
+      </div>
+      <div class="row conditional">
+        <div class="col well">
+          <h3>Навыки</h3>
+          <ul class="list-group">
+            {{
+              skills
+            }}
+          </ul>
+        </div>
+      </div>
+
+      <div class="row conditional">
+        <div class="col well">
+          <h3>Пример кода</h3>
+          <ul class="list-group">
+            {{
+              repoUrls
+            }}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const regex = new RegExp("{{.*}}");
+      $(".conditional").each((ix, el) => {
+        if (el.textContent.search(regex) !== -1) el.remove();
+      });
+    </script>
+  </body>
+</html>
