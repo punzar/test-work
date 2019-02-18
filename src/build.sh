@@ -1,3 +1,5 @@
-rm *.class
+
 javac *.java
-jar -cvmf manifest.txt ../bin/resumaker.jar  *.class 
+jar -cvmf manifest.txt resumaker.jar  *.class 
+cp resumaker.jar ../bin/
+
